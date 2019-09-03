@@ -1,16 +1,16 @@
-//enables mysql and inquierer
+//enables mysql, env, and inquirer
 require("dotenv").config();
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 
-//creates the connection 
-const connection = {
+//creates the connection information for sql database
+const connection = mysql.createConnection({
  host: "localhost",
  port: 3306,
  user: "root",
  password: process.env.password,
  database: "bamazon"
-};
+});
 
 const promptStart = [
     {

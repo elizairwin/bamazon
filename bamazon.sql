@@ -13,6 +13,6 @@ CREATE TABLE products (
 
 --add products in--
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-VALUES ("Running Sneakers", "Women's Shoes", 100, 25), ("Jersey Swing Dress", "Women's Clothing", 25, 100),  ("Rose Gold Watch", "Women's Jewelry", 300, 25),  ("Shoulder Bag", "Women's Handbags", 150, 10),  ("Aviator Sunglasses", "Women's Accessories", 130, 75),  ("Penny Loafer", "Men's Shoes", 200, 50),  ("Wool Sweater", "Men's Clothing", 35, 20),  ("Leather Belt", "Men's Accessories", 20, 50),  ("Carry-On Luggage", "Luggage", 50, 100),  ("Attaché Case", "Gear", 40, 100);
+VALUES ("Running Sneakers", "Women's Shoes", 99.99, 25), ("Jersey Swing Dress", "Women's Clothing", 24.99, 100),  ("Rose Gold Watch", "Women's Jewelry", 299.99, 25),  ("Shoulder Bag", "Women's Handbags", 159.99, 10),  ("Aviator Sunglasses", "Women's Accessories", 139.99, 75),  ("Penny Loafer", "Men's Shoes", 199.99, 50),  ("Wool Sweater", "Men's Clothing", 34.99, 20),  ("Leather Belt", "Men's Accessories", 19.99, 50),  ("Carry-On Luggage", "Luggage", 49.99, 100),  ("Attaché Case", "Gear", 39.99, 100);
 
 SELECT * FROM products
