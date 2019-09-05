@@ -129,15 +129,13 @@ function customer() {
             {
                 name: "shop",
                 type: "list",
-                message: "Would you like to buy another product?",
+                message: "Would you like to buy another products?",
                 choices: ["Yes.", "No. Thank you."]
             }
         ]).then(function (input) {
             if (input.shop === "Yes.") {
-                //show available products again
                 displayInventory();
             } else {
-                //for the no answer
                 connection.end();
             }
         })
