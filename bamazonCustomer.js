@@ -1,16 +1,16 @@
 //enable packages
 require("dotenv").config(); //hidden password
-var mysql = require("mysql"); //sql database
-var inquirer = require("inquirer"); //prompts
+const mysql = require("mysql"); //sql database
+const inquirer = require("inquirer"); //prompts
 
 
 //not required, but add to user experience
 const chalk = require("chalk"); //colors
-var Table = require("cli-table"); //nicely formatted table
+const Table = require("cli-table"); //nicely formatted table
 
 
 //create the connection information for the sql database
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
@@ -31,16 +31,16 @@ function displayInventory() {
 
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        var table = new Table({
+        let table = new Table({
             head: [chalk.red("ID#"), chalk.red("Product Name"), chalk.red("Department"), chalk.red("Price"), chalk.red("Available Qty")],
             colWidths: [5, 50, 15, 10, 20]
         });
-        for (var i = 0; i < res.length; i++) {
-            var tableID = res[i].id;
-            var tableProd = res[i].product_name;
-            var tableDept = res[i].department_name;
-            var tablePrice = res[i].price;
-            var tableQty = res[i].stock_quantity
+        for (let i = 0; i < res.length; i++) {
+            let tableID = res[i].id;
+            let tableProd = res[i].product_name;
+            let tableDept = res[i].department_name;
+            let tablePrice = res[i].price;
+            let tableQty = res[i].stock_quantity
             table.push(
                 [tableID, tableProd, tableDept, tablePrice, tableQty]
             );
@@ -61,8 +61,8 @@ function customer() {
                     name: "idBuy",
                     type: "rawlist",
                     choices: function () {
-                        var choiceArray = [];
-                        for (var i = 0; i < res.length; i++) {
+                        let choiceArray = [];
+                        for (let i = 0; i < res.length; i++) {
                             choiceArray.push(res[i].product_name)
                         }
                         return choiceArray;
@@ -84,15 +84,15 @@ function customer() {
                 }
             ]).then(function (input) {
                 //get info on selected item for inventory comparison (next)
-                var chosenItem;
-                for (var i = 0; i < res.length; i++) {
+                let chosenItem;
+                for (let i = 0; i < res.length; i++) {
                     if (res[i].product_name === input.idBuy) {
                         chosenItem = res[i];
                     }
                 }
                 //define inventory terms for use
-                var availQty = chosenItem.stock_quantity;
-                var chosenQty = input.qtyBuy;
+                let availQty = chosenItem.stock_quantity;
+                let chosenQty = input.qtyBuy;
 
                 //determine if desired qty is greater than avail qty of product
                 if (parseInt(chosenQty) > availQty) {
