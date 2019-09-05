@@ -25,6 +25,7 @@ connection.connect(function (err) {
 
 });
 
+//main program 
 function manager() {
     inquirer.prompt([
         {
@@ -55,3 +56,19 @@ function manager() {
         }
     })
 };
+
+function displayInventory (){
+
+}
+
+function lowInventory (){
+    
+}
+
+function addInventory (){
+    
+}
+
+function addProduct (){
+    
+}
