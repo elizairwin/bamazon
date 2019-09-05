@@ -24,3 +24,34 @@ connection.connect(function (err) {
     manager()
 
 });
+
+function manager() {
+    inquirer.prompt([
+        {
+            name: "manage",
+            type: "list",
+            message: "\nWhat would you like to do?",
+            choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"]
+
+        }
+    ]).then(function (input) {
+        switch (input.manage) {
+            case "View Products for Sale":
+                displayInventory();
+                break;
+
+            case "View Low Inventory":
+                lowInventory();
+                break;
+
+            case "Add to Inventory":
+                addInventory();
+                break;
+
+            case "Add New Product":
+                console.log("Add New Product function");
+                addProduct()
+                break;
+        }
+    })
+};
