@@ -27,6 +27,13 @@ In bamazonManager.js, Bamazon allows the user to perform higher level tasks such
 4. Follow instructions
 
 ## Screenshots:
+1. Working mysql workbench: [https://i.postimg.cc/6pch24c5/Screen-Shot-2019-09-07-at-12-44-11-PM.png)]
+2. Customer view: [https://i.postimg.cc/vZ4m9pLg/Screen-Shot-2019-09-07-at-12-46-36-PM.png)]
+3. Manager view: 
+    1. View products for sale: [(https://i.postimg.cc/XvWT35Jj/Screen-Shot-2019-09-07-at-12-48-07-PM.png)]
+    2. View low inventory: [(https://i.postimg.cc/k44YXvdm/Screen-Shot-2019-09-07-at-12-49-29-PM.png)]
+    3. Add to inventory: [(https://i.postimg.cc/ncb8TNJ9/Screen-Shot-2019-09-07-at-12-50-27-PM.png)]
+    4. Add new product: [(https://i.postimg.cc/MK841R7y/Screen-Shot-2019-09-07-at-12-51-20-PM.png)]
 
 ## My Role in App Developement: 
 * Performed setup and installation
