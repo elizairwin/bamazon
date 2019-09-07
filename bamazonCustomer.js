@@ -114,7 +114,7 @@ function customer() {
                         ],
                         function (error) {
                             if (error) throw err;
-                            console.log(chalk.green("\nSold!\n"));
+                            console.log(chalk.green("\nSold! Your total is\n" + "$" +(chosenQty * (chosenItem.price  * 100) / 100)));
                              //give the user the chance to continue shopping
                             shopAgain();
                         }
