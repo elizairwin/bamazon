@@ -57,9 +57,28 @@ function manager() {
     })
 };
 
-function displayInventory (){
+function displayInventory() {
 
-}
+    connection.query("SELECT * FROM products", function (err, res) {
+        if (err) throw err;
+        let table = new Table({
+            head: [chalk.red("ID#"), chalk.red("Product Name"), chalk.red("Department"), chalk.red("Price"), chalk.red("Available Qty")],
+            colWidths: [5, 50, 15, 10, 20]
+        });
+        for (let i = 0; i < res.length; i++) {
+            let tableID = res[i].id;
+            let tableProd = res[i].product_name;
+            let tableDept = res[i].department_name;
+            let tablePrice = res[i].price;
+            let tableQty = res[i].stock_quantity
+            table.push(
+                [tableID, tableProd, tableDept, tablePrice, tableQty]
+            );
+        }
+        console.log(table.toString());
+        manager();
+    });
+};
 
 function lowInventory (){
     
