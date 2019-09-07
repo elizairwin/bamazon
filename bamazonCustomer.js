@@ -3,11 +3,9 @@ require("dotenv").config(); //hidden password
 const mysql = require("mysql"); //sql database
 const inquirer = require("inquirer"); //prompts
 
-
 //not required, but add to user experience
 const chalk = require("chalk"); //colors
 const Table = require("cli-table"); //nicely formatted table
-
 
 //create the connection information for the sql database
 const connection = mysql.createConnection({
@@ -28,7 +26,6 @@ connection.connect(function (err) {
 
 //display inventory in table
 function displayInventory() {
-
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
         let table = new Table({
@@ -50,7 +47,7 @@ function displayInventory() {
     });
 };
 
-//customer says what product (ID) they want
+//customer says what product they want
 //customer says how many units they want
 function customer() {
     connection.query("SELECT * FROM products", function (err, res) {
@@ -90,12 +87,14 @@ function customer() {
                         chosenItem = res[i];
                     }
                 }
+
                 //define inventory terms for use
                 let availQty = chosenItem.stock_quantity;
                 let chosenQty = input.qtyBuy;
 
                 //determine if desired qty is greater than avail qty of product
                 if (parseInt(chosenQty) > availQty) {
+                    //return error message
                     console.log(chalk.red("\nSorry. There's not enough inventory of this product.\n"));
                     //give the user the chance to continue shopping
                     shopAgain();
@@ -114,6 +113,7 @@ function customer() {
                         ],
                         function (error) {
                             if (error) throw err;
+                            //give success message (and price)
                             console.log(chalk.green("\nSold! Your total is\n" + "$" +(chosenQty * (chosenItem.price  * 100) / 100)));
                              //give the user the chance to continue shopping
                             shopAgain();
