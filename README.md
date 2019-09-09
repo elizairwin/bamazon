@@ -22,7 +22,7 @@ In bamazonManager.js, Bamazon allows the user to perform higher level tasks such
 
 ## Instructions for Use:
 1. Open up command line
-2. Navigate to liri-node-app
+2. Navigate to bamazon app
 3. Type either node bamazonCustomer.js or node bamazonManager.js
 4. Follow instructions
 
